@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;800&family=Roboto:wght@100;300;400;500;900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container{
+  display: flex;
+  gap: 10px;
+  padding: 0px 10px 0px 10px;
+}
+
+.card{
+  border-radius: 50px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70vh;
+  color: white;
+  cursor: pointer;
+  width: 100px;
+  position: relative;
+  transition: width 0.5s ease-in;
+  user-select: none;
+}
+
+.card h3{
+  font-size: 24px;
+  font-weight: 400;
+  padding: 0px 0px 0px 25px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0;
+}
+
+.card.active{
+  width: 500px;
+}
+
+.card.active h3{
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+  .container{
+    width: 100vw;
+  }
+
+  /* This will point to the second and third element with a class of card */
+  .card:nth-child(2), .card:nth-child(3){
+    display: none;
+  }
+}
